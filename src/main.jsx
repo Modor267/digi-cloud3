@@ -12,6 +12,7 @@ const router = createBrowserRouter([
 		element: <App />,
 		children: [
 			{
+				path: '/digi-cloud3/',
 				index: true,
 				element: <HomePage />,
 			},
