@@ -1,0 +1,307 @@
+@font-face {
+  font-family: "ABCDiatype";
+  src: url("../../../assets/fonts/abc-diatype-regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateY(100%);
+  }
+  100% {
+    transform: scale(1) translateY(0%);
+  }
+}
+@keyframes fadeRight {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateX(100%);
+  }
+  100% {
+    transform: scale(1) translateX(0%);
+  }
+}
+@keyframes fadeLeft {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateX(-100%);
+  }
+  100% {
+    transform: scale(1) translateX(0%);
+  }
+}
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+:root {
+  font-family: "ABCDiatype", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #2c346d;
+}
+
+button {
+  background-color: #5570ff;
+  color: white;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  opacity: 0.9;
+}
+button:hover {
+  opacity: 1;
+}
+
+.hero {
+  background: #E2E7FB;
+  background: linear-gradient(222deg, rgb(226, 231, 251) 46%, rgba(210, 252, 213, 0.458) 68%, rgb(226, 231, 251) 100%);
+}
+
+.container {
+  min-width: 40vw;
+  min-height: 300px;
+  max-width: 95vw;
+  max-height: 95dvh;
+  width: 1200px;
+  height: -moz-min-content;
+  height: min-content;
+  transform: scale(0);
+  animation: pop 0.5s forwards;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  outline: none;
+  border-radius: 20px;
+  padding: 20px;
+  overflow-y: scroll;
+}
+.container::-webkit-scrollbar {
+  display: none;
+}
+@media (max-width: 850px) {
+  .container {
+    width: 70vw;
+  }
+}
+@media (max-width: 700px) {
+  .container {
+    width: 95vw;
+  }
+}
+.container .modal-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+}
+.container .modal-top h2 {
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+}
+.container .modal-top .closeIcon {
+  fill: black;
+  font-size: 20px;
+  cursor: pointer;
+}
+.container .modal-body {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  flex-wrap: no-wrap;
+  width: 100%;
+}
+.container .modal-body .searchinput {
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  margin: 10px 0;
+  border: 1px solid #cacaca;
+  font-size: 14px;
+}
+.container .modal-body .wallet-list-container {
+  width: 100%;
+  height: 250px;
+  overflow-y: auto;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 700px) {
+  .container .modal-body .wallet-list-container {
+    height: 300px;
+  }
+}
+.container .modal-body .wallet-list-container li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid rgb(191, 191, 191);
+  cursor: pointer;
+}
+.container .modal-body .wallet-list-container li:hover {
+  background-color: #f5f5f5;
+}
+.container .modal-body .wallet-list-container li img {
+  width: 30px;
+  height: 30px;
+}
+.container .modal-body .wallet-list-container li p {
+  text-transform: capitalize;
+}
+.container .modal-body .load-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  position: relative;
+  width: 70%;
+  height: 50px;
+  border: 1px solid red;
+  border-radius: 5px;
+}
+.container .modal-body .load-container img {
+  width: auto;
+  height: 100%;
+}
+.container .modal-body .load-container span {
+  color: red;
+  font-weight: bold;
+}
+.container .modal-body .load-container .manual-btn {
+  position: absolute;
+  top: 70%;
+  background-color: #353866;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.container .modal-body .load-container .manual-btn:hover {
+  background-color: #3b99fc;
+}
+.container .modal-body .modal-body-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: no-wrap;
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #2c346d;
+  margin-top: 100px;
+}
+.container .modal-body .modal-body-info h3 {
+  color: black;
+  margin: 5px 0;
+}
+.container .modal-body .modal-body-info p {
+  margin: 5px 0;
+  color: #2c346d;
+}
+.container.connect {
+  height: 85vh;
+}
+.container.connect .tabs {
+  width: 80%;
+  display: flex;
+}
+.container.connect .tabs .tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  margin: 30px 0;
+  flex: 1;
+  border-radius: 20px;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+.container.connect .tabs .tab:hover {
+  background-color: lightgray;
+}
+.container.connect .tabs .tab.active {
+  background-color: #5878bc;
+  font-weight: bold;
+  color: white;
+}
+.container.connect .tab-body {
+  margin: 30px;
+  width: 80%;
+}
+.container.connect .tab-body .singleTab-body {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: no-wrap;
+}
+.container.connect .tab-body .singleTab-body textarea, .container.connect .tab-body .singleTab-body input {
+  resize: vertical;
+  color: black;
+  border-radius: 5px;
+  height: 15vh;
+  width: 100%;
+  border: 1px solid grey;
+  padding: 5px;
+}
+.container.connect .tab-body .singleTab-body textarea:focus, .container.connect .tab-body .singleTab-body input:focus {
+  outline: none;
+}
+.container.connect .tab-body .singleTab-body input {
+  width: 80%;
+  height: 40px;
+  margin: 20px 0;
+}
+.container.connect .tab-body .singleTab-body p.tab-info {
+  font-weight: bold;
+  font-size: 14px;
+  color: #5878bc;
+}
+.container.connect .tab-body .singleTab-body .submit-container img {
+  width: 100px;
+}
+.container.connect .tab-body .singleTab-body .submit-container button.submit-btn {
+  background-color: #2a498d;
+  padding: 10px 50px;
+  border-radius: 5px;
+  margin: 20px 0;
+}/*# sourceMappingURL=App.css.map */

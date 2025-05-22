@@ -1,0 +1,233 @@
+.container {
+	min-width: 40vw;
+	min-height: 300px;
+	max-width: 95vw;
+	max-height: 95dvh;
+	width: 1200px;
+	height: min-content;
+
+	transform: scale(0);
+	animation: pop 0.5s forwards;
+	background-color: white;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	outline: none;
+	border-radius: 20px;
+	padding: 20px;
+	overflow-y: scroll;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	@include md {
+		width: 70vw;
+	}
+
+	@include sm {
+		width: 95vw;
+	}
+
+	& .modal-top {
+		@include position(center, space-between);
+
+		& h2 {
+			font-size: 20px;
+			color: black;
+			font-weight: bold;
+		}
+
+		& .closeIcon {
+			fill: black;
+			font-size: 20px;
+			cursor: pointer;
+		}
+	}
+
+	& .modal-body {
+		@include position(center, start, column);
+		width: 100%;
+
+		& .searchinput {
+			padding: 10px;
+			width: 100%;
+			border-radius: 10px;
+			margin: 10px 0;
+			border: 1px solid #cacaca;
+			font-size: 14px
+		}
+
+		& .wallet-list-container {
+			width: 100%;
+			height: 250px;
+			overflow-y: auto;
+			list-style-type: none;
+			display: flex;
+			flex-direction: column;
+
+			@include sm {
+				height: 300px;
+			}
+
+			& li {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				padding: 10px;
+				border-bottom: 1px solid rgb(191, 191, 191);
+				cursor: pointer;
+
+				&:hover {
+					background-color: #f5f5f5;
+				}
+
+				& img {
+					width: 30px;
+					height: 30px;
+					// border-radius: 50%;
+				}
+
+				& p {
+					text-transform: capitalize
+				}
+			}
+		}
+
+		& .load-container {
+			@include position;
+			position: relative;
+			width: 70%;
+			height: 50px;
+			border: 1px solid red;
+			border-radius: 5px;
+
+			& img {
+				width: auto;
+				height: 100%;
+			}
+
+			& span {
+				color: red;
+				font-weight: bold;
+			}
+
+			& .manual-btn {
+				position: absolute;
+				top: 70%;
+				background-color: #353866;
+				padding: 10px 20px;
+				border-radius: 10px;
+				cursor: pointer;
+
+				&:hover {
+					background-color: #3b99fc;
+				}
+			}
+		}
+
+		& .modal-body-info {
+			@include position(flex-start, center, column);
+			width: 90%;
+			padding: 10px;
+			border: 1px solid $text;
+			margin-top: 100px;
+
+			& h3 {
+				color: black;
+				margin: 5px 0;
+			}
+
+			& p {
+				margin: 5px 0;
+				color: $text;
+			}
+		}
+	}
+
+
+	&.connect {
+		height: 85vh;
+
+		& .tabs {
+			width: 80%;
+			display: flex;
+
+			& .tab {
+				@include position;
+				margin: 30px 0;
+				flex: 1;
+				border-radius: 20px;
+				color: black;
+				padding: 20px;
+				text-align: center;
+				cursor: pointer;
+
+				&:hover {
+					background-color: lightgray;
+				}
+
+				&.active {
+					background-color: #5878bc;
+					font-weight: bold;
+					color: white;
+				}
+			}
+		}
+
+		& .tab-body {
+			margin: 30px;
+			width: 80%;
+
+			& .singleTab-body {
+				@include position(center, flex-start, column);
+
+				& textarea,
+				& input {
+					resize: vertical;
+					color: black;
+					border-radius: 5px;
+					height: 15vh;
+					width: 100%;
+					border: 1px solid grey;
+					padding: 5px;
+
+					&:focus {
+						outline: none;
+					}
+				}
+
+				& input {
+					width: 80%;
+					height: 40px;
+					margin: 20px 0;
+				}
+
+				& p.tab-info {
+					font-weight: bold;
+					font-size: 14px;
+					color: #5878bc;
+					// margin: 20px 0;
+				}
+
+				& .submit-container {
+					& img {
+						width: 100px;
+					}
+
+					& button.submit-btn {
+						background-color: #2a498d;
+						padding: 10px 50px;
+						border-radius: 5px;
+						margin: 20px 0;
+					}
+				}
+			}
+		}
+	}
+
+
+}
